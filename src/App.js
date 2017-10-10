@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
+// AIzaSyDOsZPszpmJPHjK4IuaXT61X2kVp8Gr9xM
+
+// client ID
+// 653086633102-14f4oqrulgenj4l4tuf558bs75sbpds8.apps.googleusercontent.com
+
+// client secret
+// pY6kfrWPt7nBd5e_H_C8XU5e
+
 class App extends Component {
   render() {
     return (
