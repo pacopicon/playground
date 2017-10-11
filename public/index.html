@@ -22,10 +22,8 @@
     <title>Playground</title>
   </head>
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
     <script type="text/javascript">
+
       // You probably don't want to use globals, but this is just example code
       var fbAppId = 313992562403167;
       var objectToLike = 'http://techcrunch.com/2013/02/06/facebook-launches-developers-live-video-channel-to-keep-its-developer-ecosystem-up-to-date/';
@@ -45,7 +43,7 @@
       // Additional JS functions here
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : fbAppId, // App ID
+          appId      : 313992562403167, // App ID
           status     : true,    // check login status
           cookie     : true,    // enable cookies to allow the
                                 // server to access the session
@@ -55,6 +53,7 @@
         });
 
         // Put additional init code here
+        FB.AppEvents.logPageView();
       };
 
       // Load the SDK Asynchronously
@@ -112,6 +111,22 @@
            }
         );
       }
+
+
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response)
+          console.log("response.status: ", response.status)
+        })
+      }
+
+      var finished_rendering = function() {
+        console.log("finished rendering plugins")
+        var spinner = document.getElementById("spinner")
+        spinner.removeAttribute("style")
+        spinner.removeChild(spinner.childNodes[0])
+      }
+      FB.Event.subscribe('xfbml.render', finished_rendering)
     </script>
     <div id="root"></div>
     
@@ -124,14 +139,29 @@
   order to publish an action.  The scope parameter below
   is what prompts the user for that permission.
 -->
-
-    <div
+    <!-- <div id="spinner"
+      style="
+        background: #4267b2;
+        border-radius: 5px;
+        color: white;
+        height: 40px;
+        text-align: center;
+        width: 250px;">
+      Loading -->
+      <!-- <div
       class="fb-login-button"
       data-show-faces="true"
-      data-width="200"
+      data-size="large"
       data-max-rows="1"
       data-scope="publish_actions">
-    </div>
+    </div> -->
+    <!-- </div> -->
+    
+
+    <fb:login-button 
+      scope="public_profile,email"
+      onlogin="checkLoginState();">
+    </fb:login-button>
 
     <div>
     This example creates a story on Facebook using the
