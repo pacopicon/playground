@@ -160,7 +160,14 @@
     <!-- </div> -->
     
 
-    <fb:login-button 
+    <fb:login-button id="spinner"
+      style="
+        background: #4267b2;
+        border-radius: 5px;
+        color: white;
+        height: 40px;
+        text-align: center;
+        width: 250px;"
       scope="public_profile,email"
       onlogin="checkLoginState();">
     </fb:login-button>
