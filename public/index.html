@@ -122,13 +122,13 @@
         })
       }
 
-      var finished_rendering = function() {
-        console.log("finished rendering plugins")
-        var spinner = document.getElementById("spinner")
-        spinner.removeAttribute("style")
-        spinner.removeChild(spinner.childNodes[0])
-      }
-      FB.Event.subscribe('xfbml.render', finished_rendering)
+      // var finished_rendering = function() {
+      //   console.log("finished rendering plugins")
+      //   var spinner = document.getElementById("spinner")
+      //   spinner.removeAttribute("style")
+      //   spinner.removeChild(spinner.childNodes[0])
+      // }
+      // FB.Event.subscribe('xfbml.render', finished_rendering)
     </script>
     <div id="root"></div>
     
@@ -141,7 +141,7 @@
   order to publish an action.  The scope parameter below
   is what prompts the user for that permission.
 -->
-    <div id="spinner"
+    <!-- <div id="spinner"
       style="
         background: #4267b2;
         border-radius: 5px;
@@ -154,7 +154,7 @@
         scope="public_profile,email"
         onlogin="checkLoginState();">
       </fb:login-button>
-    </div>
+    </div> -->
 
     <div
       class="fb-login-button"
