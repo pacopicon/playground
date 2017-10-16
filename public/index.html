@@ -141,7 +141,7 @@
   order to publish an action.  The scope parameter below
   is what prompts the user for that permission.
 -->
-    <!-- <div id="spinner"
+    <div id="spinner"
       style="
         background: #4267b2;
         border-radius: 5px;
@@ -149,7 +149,7 @@
         height: 40px;
         text-align: center;
         width: 250px;">
-      Loading -->
+      Loading
       <div
         class="fb-login-button"
         data-show-faces="true"
@@ -157,13 +157,14 @@
         data-max-rows="1"
         data-scope="publish_actions">
       </div>
-    <!-- </div> -->
+      <fb:login-button 
+        scope="public_profile,email"
+        onlogin="checkLoginState();">
+      </fb:login-button>
+    </div>
     
 
-    <!-- <fb:login-button 
-      scope="public_profile,email"
-      onlogin="checkLoginState();">
-    </fb:login-button> -->
+    
 
     <div>
     This example creates a story on Facebook using the
