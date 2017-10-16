@@ -117,17 +117,17 @@
 
       function checkLoginState() {
         FB.getLoginStatus(function(response) {
-          // statusChangeCallback(response)
+          statusChangeCallback(response)
           console.log("response.status: ", response.status)
         })
       }
 
-      // var finished_rendering = function() {
-      //   console.log("finished rendering plugins")
-      //   var spinner = document.getElementById("spinner")
-      //   spinner.removeAttribute("style")
-      //   spinner.removeChild(spinner.childNodes[0])
-      // }
+      var finished_rendering = function() {
+        console.log("finished rendering plugins")
+        var spinner = document.getElementById("spinner")
+        spinner.removeAttribute("style")
+        spinner.removeChild(spinner.childNodes[0])
+      }
       FB.Event.subscribe('xfbml.render', finished_rendering)
     </script>
     <div id="root"></div>
@@ -141,7 +141,7 @@
   order to publish an action.  The scope parameter below
   is what prompts the user for that permission.
 -->
-    <!-- <div id="spinner"
+    <div id="spinner"
       style="
         background: #4267b2;
         border-radius: 5px;
@@ -149,21 +149,21 @@
         height: 40px;
         text-align: center;
         width: 250px;">
-      Loading -->
-      <!-- <div
-      class="fb-login-button"
-      data-show-faces="true"
-      data-size="large"
-      data-max-rows="1"
-      data-scope="publish_actions">
-    </div> -->
-    <!-- </div> -->
+      Loading
+      <div
+        class="fb-login-button"
+        data-show-faces="true"
+        data-size="large"
+        data-max-rows="1"
+        data-scope="publish_actions">
+      </div>
+    </div>
     
 
-    <fb:login-button 
+    <!-- <fb:login-button 
       scope="public_profile,email"
       onlogin="checkLoginState();">
-    </fb:login-button>
+    </fb:login-button> -->
 
     <div>
     This example creates a story on Facebook using the
