@@ -150,22 +150,20 @@
         text-align: center;
         width: 250px;">
       Loading
-      <div
-        class="fb-login-button"
-        data-show-faces="true"
-        data-size="large"
-        data-max-rows="1"
-        data-scope="publish_actions">
-      </div>
       <fb:login-button 
         scope="public_profile,email"
         onlogin="checkLoginState();">
       </fb:login-button>
     </div>
-    
 
+    <div
+      class="fb-login-button"
+      data-show-faces="true"
+      data-size="large"
+      data-max-rows="1"
+      data-scope="publish_actions">
+    </div>
     
-
     <div>
     This example creates a story on Facebook using the
     <a href="https://developers.facebook.com/docs/reference/ogaction/og.likes">
